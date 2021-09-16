@@ -1,8 +1,8 @@
-# Where Is Wally 3D?
+# Where Is Wally Cap 3D?
 Final project Carnicella - Interactive Graphics 2020/2021.
 
 <p align="center">
-    <img alt="Where is Wally 3D?" title="Where is Wally 3D?" src="./texture/whereiswally.png" width="450">
+    <img alt="Where is Wally cap 3D?" title="Where is Wally cap 3D?" src="./texture/whereiswally.png" width="450">
 </p>
 
 
