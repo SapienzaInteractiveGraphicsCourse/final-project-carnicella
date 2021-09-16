@@ -22,7 +22,7 @@ Final project Carnicella - Interactive Graphics 2020/2021.
 - `Mouse`: camera inclination
 - `Mouse click`:  check object
 
-🖥️🕹️ Online play
+## 🖥️ Online play
 ### [Click here to play](https://sapienzainteractivegraphicscourse.github.io/final-project-carnicella/)
 
 
