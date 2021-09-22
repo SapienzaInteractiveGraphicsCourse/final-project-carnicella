@@ -1,4 +1,4 @@
-# Where Is Wally Cap 3D?
+# Where Is Wally's Cap 3D?
 Final project Carnicella - Interactive Graphics 2020/2021.
 
 <p align="center">
