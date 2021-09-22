@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <script src="Utils/threex.domevents.js"></script>
+    <script type="module">
+
+        // IMPORT
+        import { FlyControls } from './Cameraconfig/control.js';
+        import Stats from './Cameraconfig/stats.js';
+        import * as cam from './Cameraconfig/camera.js';
+        import * as geom from './Meshproperty/geom.js';
+        import * as menu from './Menu/menu.js';
+        import * as light from './Lightproperty/light.js';
+        import * as utils from './Utils/utils.js';
+        import * as asset from './Assets/asset.js';
+        import * as position from './Meshproperty/position.js';
+        import * as THREE from './three.js-master/build/three.module.js';
+        import { GLTFLoader } from './three.js-master/examples/jsm/loaders/GLTFLoader.js';
+        import * as dat from './three.js-master/examples/jsm/libs/dat.gui.module.js'
+
+        function createNode(position, rotation, obj, child, child2) {
+            var node = {
+                position: position,
+                rotation: rotation,
+                render: obj,
+                child: child,
+                child2: child2
+            }
+            return node;
+        }
+
+        var params = {
+            switch: false
+        };
+
+        var levels = [5, 8, 13, 21, 34, 55, 89, 144, 233, 337, 1000]; // 10 livelli
+        var assPos = [];
+        var level = 0;
+        let controls;
+        let container, stats;
+        var bool = false;
+        var camera;
+        var l, i;
+        var mixer;
+        const gui = new dat.GUI();
+
+        const clock = new THREE.Clock();
+        //var mouse, target;
+        // CONTROL HELPER
+        let a = gui.add(params, "switch").name("asset light help");
+        a.listen();
+        a.onChange(function (value) {
+            if (value == true) {
+                params = false;
+                console.log(params);
+                l.color.setHex(0xff0000);
+                console.log("l", l);
+            }
+            else {
+                params = true;
+                console.log(params);
+                l.color.setHex(0xffffff);
+                console.log("l", l);
+
+            }
+        });
+        gui.open();
+
+        container = document.createElement('div');
+        document.body.appendChild(container);
+
+        var nodeMenu = [];
+        for (var t = 0; t <= 10; t++) nodeMenu[t] = createNode(null, null, menu.createMenu(t), menu.createMenuLight(), menu.createMenuPlay());
+
+        //[0-10]
+        var scene = [
+            new THREE.Scene(), new THREE.Scene(), new THREE.Scene(), new THREE.Scene(),
+            new THREE.Scene(), new THREE.Scene(), new THREE.Scene(), new THREE.Scene(),
+            new THREE.Scene(), new THREE.Scene(), new THREE.Scene()
+        ];
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        window.addEventListener('resize', cam.onResize, false);
+
+        // STATISTICHE 
+        stats = new Stats();
+        container.appendChild(stats.dom);
+
+        initScene(level);
+        render();
+        animate();
+
+        // INIZIALIZZAZIONE SCENA
+        function initScene(level) {
+            if (level > 0) {
+                gui.remove(i);
+            }
+            //const axesHelper = new THREE.AxesHelper( 100 );
+            //scene[level].add( axesHelper );
+            bool = false;
+
+            // SETUP CAMERA 
+            camera = position.setUpCameraInitPosition();
+            //mouse = cam.getMouse();
+            //target = cam.getTarget();
+
+            // SETUP BACKGROUND
+            scene[level].background = new THREE.Color().setHSL(0.51, 0.4, 0.01);
+            scene[level].fog = new THREE.Fog('#808080', 3000, 10000);
+
+            // CREAZIONE MENU
+            scene[level].add(nodeMenu[level].render);
+            if (level < 10) {
+                scene[level].add(nodeMenu[level].child2);
+            }
+            scene[level].add(nodeMenu[level].child);
+
+            // CREAZIONE GEOMETRIE MULTIPLE
+            var mesh = createMultipleGeometry(levels[level]);
+
+            // IMPORT ASSET
+            const domEvents = new THREEx.DomEvents(camera, render.domElement, THREE);
+            const loader = new GLTFLoader();
+            scene[level] = load(scene[level], loader, domEvents);
+
+            // SETUP LUCE SU CAMERA
+            if (level == 0) {
+                camera = cam.createPointLightCamera(camera);
+            }
+            scene[level].add(camera);
+            domEvents.addEventListener(nodeMenu[level].child2, 'click', event => {
+                if (level < 10) {
+
+                    // AGGIUNTA GEOMETRIE MULTIPLE PRECARICATE
+                    addMultipleGeometry(mesh, level);
+
+                    // CREAZIONE LUCI MULTIPLE 
+                    scene = light.createMultipleLight(scene, levels[level], level);
+
+                    // SET UP FLY CONTROLS
+                    controls = new FlyControls(camera, renderer.domElement);
+                    controls.movementSpeed = 25;
+                    controls.domElement = container;
+                    controls.rollSpeed = Math.PI / 6;
+                    controls.autoForward = false;
+                    controls.dragToLook = true;
+                    bool = true;
+                }
+            })
+            console.log(scene[level]);
+        }
+
+        // CARICAMENTO ASSET
+        function load(s, loader, domEvents) {
+            loader.load('../Assets/scene.gltf', function (gltf) {
+                console.log(gltf);
+                var ass = gltf.scene;
+
+                // ASSET INITAL POSITION 
+                ass = position.setUpAssInitPosition(ass, level, s);
+                assPos = [ass.position.x, ass.position.y, ass.position.z];
+
+                // ASSET LIGHT HELPER
+                l = light.createAssetLight(assPos);
+                s.add(l);
+                i = gui.add(l, "intensity", 0, 10, 0.01);
+
+                s.add(ass);
+
+                domEvents.addEventListener(ass, 'click', event => {
+
+                    // CREAZIONE ANIMATION CLIP
+                    var clip = asset.createAnimationClip(ass, camera);
+
+                    // CREAZIONE ACTION CLIP MIXER
+                    mixer = asset.createClipActionMixer(ass, camera);
+
+                    // CREAZIONE ACTION CLIP
+                    var clipAction = asset.createClipAction(mixer, clip);
+
+                    // PLAY
+                    clipAction.play();
+
+                    mixer.addEventListener('loop', function (e) {
+                        clipAction.stop();
+                        level = (level + 1);
+                        initScene(level);
+                    });
+                    console.log("click");
+                })
+            }, function (xhr) {
+                console.log((xhr.loaded / xhr.total * 100) + "% loaded");
+            }, undefined, function (error) {
+                console.error(error);
+            });
+            return s;
+        }
+
+        //CREAZIONE GEOMETRIE
+        function createMultipleGeometry(level) {
+            const i = level * 1 + level + 30;
+            var mesh = [];
+            for (let ii = 0; ii <= i; ii++) {
+                if (level != 10)
+                    var geometry = createNode(null, null, geom.createGeometry(level), null, null);
+                mesh.push(geometry.render);
+            }
+            return mesh;
+        }
+
+        //AGGIUNTA GEOMETRIE ALLA SCENA 
+        function addMultipleGeometry(mesh, level) {
+            const animationGroup = new THREE.AnimationObjectGroup();
+            mesh.forEach(item => {
+                // CREAZIONE ANIMATION CLIP
+               if(Math.floor(Math.random() * 2) == 1){
+                    animationGroup.add(item);
+               }
+                scene[level].add(item);
+            })
+
+            var clip = asset.createGeometryAnimation(mesh[0]);
+
+            // CREAZIONE ACTION CLIP MIXER
+            mixer = asset.createClipActionMixer(animationGroup, camera);
+
+            // CREAZIONE ACTION CLIP
+            var clipAction = asset.createClipAction(mixer, clip);
+
+            // PLAY
+            clipAction.play();
+        }
+
+
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+            stats.update();
+        }
+
+        function render() {
+            const delta = clock.getDelta();
+            if (bool) {
+                controls.update(delta);
+                if (camera.position.z > 60) {
+                    camera.position.z = camera.position.z - 1;
+                }
+            }
+            if (mixer) {
+                mixer.update(delta);
+            }
+            renderer.render(scene[level], camera);
+        }
+
+        function onResize(event) {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            windowHalf.set(width / 2, height / 2);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height);
+        }
+
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        })
+    </script>
+
+</body>
+
+
+</html>
