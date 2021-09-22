@@ -163,7 +163,7 @@ var menu10 = new THREE.MeshStandardMaterial(
     }
 );
 
-const play = textureLoader.load("../Texture/play.png");
+const play = textureLoader.load("../final-project-carnicella/Texture/play.png");
 
 var play1 = new THREE.MeshStandardMaterial(
     {

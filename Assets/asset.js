@@ -3,7 +3,7 @@ import * as THREE from '../three.js-master/build/three.module.js';
 // CARICAMNETO ASSET
 function load(scene, loader, domEvents) {
 
-    loader.load('../Assets/scene.gltf', function (gltf) {
+    loader.load('../final-project-carnicella/Assets/scene.gltf', function (gltf) {
         console.log(gltf);
         var ass = gltf.scene;
         scene.add(ass);
