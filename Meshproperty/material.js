@@ -95,17 +95,17 @@ var lev9 = ['#004b96', '#ffcd00', '#d8281b', '#ececec', '#6b4b35'];
 
 const textureLoader = new THREE.TextureLoader();
 
-const m0 = textureLoader.load("../Texture/menu.jpg");
-const m1 = textureLoader.load("../Texture/2.png");
-const m2 = textureLoader.load("../Texture/3.png");
-const m3 = textureLoader.load("../Texture/4.png");
-const m4 = textureLoader.load("../Texture/5.png");
-const m5 = textureLoader.load("../Texture/6.png");
-const m6 = textureLoader.load("../Texture/7.png");
-const m7 = textureLoader.load("../Texture/8.png");
-const m8 = textureLoader.load("../Texture/9.png");
-const m9 = textureLoader.load("../Texture/10.png");
-const m10 = textureLoader.load("../Texture/YOUWIN.png");
+const m0 = textureLoader.load("../final-project-carnicella/Texture/menu.jpg");
+const m1 = textureLoader.load("../final-project-carnicella/Texture/2.png");
+const m2 = textureLoader.load("../final-project-carnicella/Texture/3.png");
+const m3 = textureLoader.load("../final-project-carnicella/Texture/4.png");
+const m4 = textureLoader.load("../final-project-carnicella/Texture/5.png");
+const m5 = textureLoader.load("../final-project-carnicella/Texture/6.png");
+const m6 = textureLoader.load("../final-project-carnicella/Texture/7.png");
+const m7 = textureLoader.load("../final-project-carnicella/Texture/8.png");
+const m8 = textureLoader.load("../final-project-carnicella/Texture/9.png");
+const m9 = textureLoader.load("../final-project-carnicella/Texture/10.png");
+const m10 = textureLoader.load("../final-project-carnicella/Texture/YOUWIN.png");
 
 var menu0 = new THREE.MeshStandardMaterial(
     {
@@ -172,30 +172,30 @@ var play1 = new THREE.MeshStandardMaterial(
 );
 
 
-const fabric_C_1 = textureLoader.load("../Texture/Level/Fabric1/Fabric1_Color.jpg");
-const fabric_N_1 = textureLoader.load("../Texture/Level/Fabric1/Fabric1_Normal.jpg");
-const fabric_R_1 = textureLoader.load("../Texture/Level/Fabric1/Fabric1_Roughness.jpg");
-const fabric_O_1 = textureLoader.load("../Texture/Level/Fabric1/Fabric1_AmbientOcclusion.jpg");
+const fabric_C_1 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric1/Fabric1_Color.jpg");
+const fabric_N_1 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric1/Fabric1_Normal.jpg");
+const fabric_R_1 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric1/Fabric1_Roughness.jpg");
+const fabric_O_1 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric1/Fabric1_AmbientOcclusion.jpg");
 
-const fabric_C_2 = textureLoader.load("../Texture/Level/Fabric2/Fabric2_Color.jpg");
-const fabric_N_2 = textureLoader.load("../Texture/Level/Fabric2/Fabric2_Normal.jpg");
-const fabric_R_2 = textureLoader.load("../Texture/Level/Fabric2/Fabric2_Roughness.jpg");
-const fabric_O_2 = textureLoader.load("../Texture/Level/Fabric2/Fabric2_AmbientOcclusion.jpg");
+const fabric_C_2 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric2/Fabric2_Color.jpg");
+const fabric_N_2 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric2/Fabric2_Normal.jpg");
+const fabric_R_2 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric2/Fabric2_Roughness.jpg");
+const fabric_O_2 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric2/Fabric2_AmbientOcclusion.jpg");
 
-const fabric_C_3 = textureLoader.load("../Texture/Level/Fabric3/Fabric3_Color.jpg");
-const fabric_N_3 = textureLoader.load("../Texture/Level/Fabric3/Fabric3_Normal.jpg");
-const fabric_R_3 = textureLoader.load("../Texture/Level/Fabric3/Fabric3_Roughness.jpg");
-const fabric_O_3 = textureLoader.load("../Texture/Level/Fabric3/Fabric3_AmbientOcclusion.jpg");
+const fabric_C_3 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric3/Fabric3_Color.jpg");
+const fabric_N_3 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric3/Fabric3_Normal.jpg");
+const fabric_R_3 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric3/Fabric3_Roughness.jpg");
+const fabric_O_3 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric3/Fabric3_AmbientOcclusion.jpg");
 
-const fabric_C_4 = textureLoader.load("../Texture/Level/Fabric4/Fabric4_Color.jpg");
-const fabric_N_4 = textureLoader.load("../Texture/Level/Fabric4/Fabric4_Normal.jpg");
-const fabric_R_4 = textureLoader.load("../Texture/Level/Fabric4/Fabric4_Roughness.jpg");
-const fabric_O_4 = textureLoader.load("../Texture/Level/Fabric4/Fabric4_AmbientOcclusion.jpg");
+const fabric_C_4 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric4/Fabric4_Color.jpg");
+const fabric_N_4 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric4/Fabric4_Normal.jpg");
+const fabric_R_4 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric4/Fabric4_Roughness.jpg");
+const fabric_O_4 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric4/Fabric4_AmbientOcclusion.jpg");
 
-const fabric_C_5 = textureLoader.load("../Texture/Level/Fabric5/Fabric5_Color.jpg");
-const fabric_N_5 = textureLoader.load("../Texture/Level/Fabric5/Fabric5_Normal.jpg");
-const fabric_R_5 = textureLoader.load("../Texture/Level/Fabric5/Fabric5_Roughness.jpg");
-const fabric_O_5 = textureLoader.load("../Texture/Level/Fabric5/Fabric5_AmbientOcclusion.jpg");
+const fabric_C_5 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric5/Fabric5_Color.jpg");
+const fabric_N_5 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric5/Fabric5_Normal.jpg");
+const fabric_R_5 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric5/Fabric5_Roughness.jpg");
+const fabric_O_5 = textureLoader.load("../final-project-carnicella/Texture/Level/Fabric5/Fabric5_AmbientOcclusion.jpg");
 
 var f1 = new THREE.MeshStandardMaterial(
     {
@@ -249,31 +249,31 @@ var f5 = new THREE.MeshStandardMaterial(
 
 var fabrics = [f1, f2, f3, f4, f5];
 
-const PM_C_1 = textureLoader.load("../Texture/Level/PM1/PM1_Color.jpg");
-const PM_N_1 = textureLoader.load("../Texture/Level/PM1/PM1_Normal.jpg");
-const PM_R_1 = textureLoader.load("../Texture/Level/PM1/PM1_Roughness.jpg");
-const PM_M_1 = textureLoader.load("../Texture/Level/PM1/PM1_Metalness.jpg");
+const PM_C_1 = textureLoader.load("../final-project-carnicella/Texture/Level/PM1/PM1_Color.jpg");
+const PM_N_1 = textureLoader.load("../final-project-carnicella/Texture/Level/PM1/PM1_Normal.jpg");
+const PM_R_1 = textureLoader.load("../final-project-carnicella/Texture/Level/PM1/PM1_Roughness.jpg");
+const PM_M_1 = textureLoader.load("../final-project-carnicella/Texture/Level/PM1/PM1_Metalness.jpg");
 
 
-const PM_C_2 = textureLoader.load("../Texture/Level/PM2/PM2_Color.jpg");
-const PM_N_2 = textureLoader.load("../Texture/Level/PM2/PM2_Normal.jpg");
-const PM_R_2 = textureLoader.load("../Texture/Level/PM2/PM2_Roughness.jpg");
-const PM_M_2 = textureLoader.load("../Texture/Level/PM2/PM2_Metalness.jpg");
+const PM_C_2 = textureLoader.load("../final-project-carnicella/Texture/Level/PM2/PM2_Color.jpg");
+const PM_N_2 = textureLoader.load("../final-project-carnicella/Texture/Level/PM2/PM2_Normal.jpg");
+const PM_R_2 = textureLoader.load("../final-project-carnicella/Texture/Level/PM2/PM2_Roughness.jpg");
+const PM_M_2 = textureLoader.load("../final-project-carnicella/Texture/Level/PM2/PM2_Metalness.jpg");
 
-const PM_C_3 = textureLoader.load("../Texture/Level/PM3/PM3_Color.jpg");
-const PM_N_3 = textureLoader.load("../Texture/Level/PM3/PM3_Normal.jpg");
-const PM_R_3 = textureLoader.load("../Texture/Level/PM3/PM3_Roughness.jpg");
-const PM_M_3 = textureLoader.load("../Texture/Level/PM3/PM3_Metalness.jpg");
+const PM_C_3 = textureLoader.load("../final-project-carnicella/Texture/Level/PM3/PM3_Color.jpg");
+const PM_N_3 = textureLoader.load("../final-project-carnicella/Texture/Level/PM3/PM3_Normal.jpg");
+const PM_R_3 = textureLoader.load("../final-project-carnicella/Texture/Level/PM3/PM3_Roughness.jpg");
+const PM_M_3 = textureLoader.load("../final-project-carnicella/Texture/Level/PM3/PM3_Metalness.jpg");
 
-const PM_C_4 = textureLoader.load("../Texture/Level/PM4/PM4_Color.jpg");
-const PM_N_4 = textureLoader.load("../Texture/Level/PM4/PM4_Normal.jpg");
-const PM_R_4 = textureLoader.load("../Texture/Level/PM4/PM4_Roughness.jpg");
-const PM_M_4 = textureLoader.load("../Texture/Level/PM4/PM4_Metalness.jpg");
+const PM_C_4 = textureLoader.load("../final-project-carnicella/Texture/Level/PM4/PM4_Color.jpg");
+const PM_N_4 = textureLoader.load("../final-project-carnicella/Texture/Level/PM4/PM4_Normal.jpg");
+const PM_R_4 = textureLoader.load("../final-project-carnicella/Texture/Level/PM4/PM4_Roughness.jpg");
+const PM_M_4 = textureLoader.load("../final-project-carnicella/Texture/Level/PM4/PM4_Metalness.jpg");
 
-const PM_C_5 = textureLoader.load("../Texture/Level/PM5/PM5_Color.jpg");
-const PM_N_5 = textureLoader.load("../Texture/Level/PM5/PM5_Normal.jpg");
-const PM_R_5 = textureLoader.load("../Texture/Level/PM5/PM5_Roughness.jpg");
-const PM_M_5 = textureLoader.load("../Texture/Level/PM5/PM5_Metalness.jpg");
+const PM_C_5 = textureLoader.load("../final-project-carnicella/Texture/Level/PM5/PM5_Color.jpg");
+const PM_N_5 = textureLoader.load("../final-project-carnicella/Texture/Level/PM5/PM5_Normal.jpg");
+const PM_R_5 = textureLoader.load("../final-project-carnicella/Texture/Level/PM5/PM5_Roughness.jpg");
+const PM_M_5 = textureLoader.load("../final-project-carnicella/Texture/Level/PM5/PM5_Metalness.jpg");
 
 var pm1 = new THREE.MeshStandardMaterial(
     {
@@ -332,19 +332,19 @@ var pm5 = new THREE.MeshStandardMaterial(
 
 var PMs = [pm1, pm2, pm3, pm4, pm5];
 
-const tape_C_1 = textureLoader.load("../Texture/Level/Tape1/Tape1_Color.jpg");
-const tape_N_1 = textureLoader.load("../Texture/Level/Tape1/Tape1_Normal.jpg");
-const tape_R_1 = textureLoader.load("../Texture/Level/Tape1/Tape1_Roughness.jpg");
+const tape_C_1 = textureLoader.load("../final-project-carnicella/Texture/Level/Tape1/Tape1_Color.jpg");
+const tape_N_1 = textureLoader.load("../final-project-carnicella/Texture/Level/Tape1/Tape1_Normal.jpg");
+const tape_R_1 = textureLoader.load("../final-project-carnicella/Texture/Level/Tape1/Tape1_Roughness.jpg");
 
 
-const tape_C_2 = textureLoader.load("../Texture/Level/Tape2/Tape2_Color.jpg");
-const tape_N_2 = textureLoader.load("../Texture/Level/Tape2/Tape2_Normal.jpg");
-const tape_R_2 = textureLoader.load("../Texture/Level/Tape2/Tape2_Roughness.jpg");
+const tape_C_2 = textureLoader.load("../final-project-carnicella/Texture/Level/Tape2/Tape2_Color.jpg");
+const tape_N_2 = textureLoader.load("../final-project-carnicella/Texture/Level/Tape2/Tape2_Normal.jpg");
+const tape_R_2 = textureLoader.load("../final-project-carnicella/Texture/Level/Tape2/Tape2_Roughness.jpg");
 
 
-const tape_C_3 = textureLoader.load("../Texture/Level/Tape3/Tape3_Color.jpg");
-const tape_N_3 = textureLoader.load("../Texture/Level/Tape3/Tape3_Normal.jpg");
-const tape_R_3 = textureLoader.load("../Texture/Level/Tape3/Tape3_Roughness.jpg");
+const tape_C_3 = textureLoader.load("../final-project-carnicella/Texture/Level/Tape3/Tape3_Color.jpg");
+const tape_N_3 = textureLoader.load("../final-project-carnicella/Texture/Level/Tape3/Tape3_Normal.jpg");
+const tape_R_3 = textureLoader.load("../final-project-carnicella/Texture/Level/Tape3/Tape3_Roughness.jpg");
 
 var t1 = new THREE.MeshStandardMaterial(
     {
@@ -375,25 +375,25 @@ var t3 = new THREE.MeshStandardMaterial(
 
 var tapes = [t1, t2, t3];
 
-const tiles_C_1 = textureLoader.load("../Texture/Level/Tiles1/Tiles1_Color.jpg");
-const tiles_N_1 = textureLoader.load("../Texture/Level/Tiles1/Tiles1_Normal.jpg");
-const tiles_R_1 = textureLoader.load("../Texture/Level/Tiles1/Tiles1_Roughness.jpg");
+const tiles_C_1 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles1/Tiles1_Color.jpg");
+const tiles_N_1 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles1/Tiles1_Normal.jpg");
+const tiles_R_1 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles1/Tiles1_Roughness.jpg");
 
-const tiles_C_2 = textureLoader.load("../Texture/Level/Tiles2/Tiles2_Color.jpg");
-const tiles_N_2 = textureLoader.load("../Texture/Level/Tiles2/Tiles2_Normal.jpg");
-const tiles_R_2 = textureLoader.load("../Texture/Level/Tiles2/Tiles2_Roughness.jpg");
+const tiles_C_2 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles2/Tiles2_Color.jpg");
+const tiles_N_2 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles2/Tiles2_Normal.jpg");
+const tiles_R_2 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles2/Tiles2_Roughness.jpg");
 
-const tiles_C_3 = textureLoader.load("../Texture/Level/Tiles3/Tiles3_Color.jpg");
-const tiles_N_3 = textureLoader.load("../Texture/Level/Tiles3/Tiles3_Normal.jpg");
-const tiles_R_3 = textureLoader.load("../Texture/Level/Tiles3/Tiles3_Roughness.jpg");
+const tiles_C_3 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles3/Tiles3_Color.jpg");
+const tiles_N_3 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles3/Tiles3_Normal.jpg");
+const tiles_R_3 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles3/Tiles3_Roughness.jpg");
 
-const tiles_C_4 = textureLoader.load("../Texture/Level/Tiles4/Tiles4_Color.jpg");
-const tiles_N_4 = textureLoader.load("../Texture/Level/Tiles4/Tiles4_Normal.jpg");
-const tiles_R_4 = textureLoader.load("../Texture/Level/Tiles4/Tiles4_Roughness.jpg");
+const tiles_C_4 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles4/Tiles4_Color.jpg");
+const tiles_N_4 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles4/Tiles4_Normal.jpg");
+const tiles_R_4 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles4/Tiles4_Roughness.jpg");
 
-const tiles_C_5 = textureLoader.load("../Texture/Level/Tiles5/Tiles5_Color.jpg");
-const tiles_N_5 = textureLoader.load("../Texture/Level/Tiles5/Tiles5_Normal.jpg");
-const tiles_R_5 = textureLoader.load("../Texture/Level/Tiles5/Tiles5_Roughness.jpg");
+const tiles_C_5 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles5/Tiles5_Color.jpg");
+const tiles_N_5 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles5/Tiles5_Normal.jpg");
+const tiles_R_5 = textureLoader.load("../final-project-carnicella/Texture/Level/Tiles5/Tiles5_Roughness.jpg");
 
 var tl1 = new THREE.MeshStandardMaterial(
     {
