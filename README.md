@@ -13,7 +13,7 @@ Final project Carnicella - Interactive Graphics 2020/2021.
 
 ## 📃 Documentation
 
--   Documentation of the project [[Doc]](./Documentation.pdf)
+-   Documentation of the project [[Doc]](./Final_Project_Carnicella_Alessandro.pdf)
 
 ## 🕹️ Game Movement
 
